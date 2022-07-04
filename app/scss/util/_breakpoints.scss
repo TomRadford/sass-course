@@ -1,8 +1,10 @@
+@use 'functions' as f; 
+
 // 700px, 900px, 1440px
 $breakpoints-up: (
-    "medium": 43.75em,
-    "large": 56.25em, // em from base font size px = 16px
-    "xlarge": 90em
+    "medium": f.em(700),
+    "large": f.em(900), // em from base font size px = 16px
+    "xlarge": f.em(1440)
 );
 
 // 699.98px, 899.98px, 1439.98px

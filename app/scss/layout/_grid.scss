@@ -4,13 +4,13 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  gap: 40px;
+  gap: u.rem(40);
   // instead of:
   //max-width: 1000px;
   // padding-left: 20px;
   // padding-right: 20px;
   // do:
-  width: min(100% - 40px, 1000px); //useful to get padding on both sides
+  width: min(100% - u.rem(40), u.rem(1000)); //useful to get padding on both sides
   margin-inline: auto; 
 
   @include u.breakpoint(large) {
@@ -19,7 +19,7 @@
   }
 
   &__main, &__sidebar {
-    padding: 40px;
+    padding: u.rem(40);
   }
 
   &__main {
