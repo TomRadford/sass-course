@@ -13,6 +13,6 @@
   @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + em;
   } @else {
-    @error "#{$pixel} should not include units on em()"
+    @error "#{$pixel} should not include units on em()";
   }
 }

@@ -1,4 +1,4 @@
-@use '../util' as u;
+@use "../util" as u;
 
 .grid {
   display: grid;
@@ -10,33 +10,35 @@
   // padding-left: 20px;
   // padding-right: 20px;
   // do:
-  width: min(100% - u.rem(40), u.rem(1000)); //useful to get padding on both sides
-  margin-inline: auto; 
+  width: min(
+    100% - u.rem(40),
+    u.rem(1000)
+  ); //useful to get padding on both sides
+  margin-inline: auto;
 
   @include u.breakpoint(large) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
   }
 
-  &__main, &__sidebar {
+  &__main,
+  &__sidebar {
     padding: u.rem(40);
   }
 
   &__main {
     background-color: hsl(240, 44%, 22%);
 
-    @include u.breakpoint(medium){
+    @include u.breakpoint(medium) {
       background-color: green;
     }
 
-    @include u.breakpoint(large){
+    @include u.breakpoint(large) {
       background-color: orange;
     }
-
   }
 
   &__sidebar {
-    background-color: hsl(300, 69%, 21%);
     @include u.breakpoint-down(medium) {
       text-align: center;
     }
@@ -44,5 +46,17 @@
       text-align: right;
     }
   }
-   
+
+  &__widget {
+    padding: u.rem(16);
+    &.magenta {
+
+      background-color: hsl(300, 69%, 21%);
+    }
+
+    &.green {
+
+      background-color: hsl(120, 98%, 21%);
+    }
+  }
 }
