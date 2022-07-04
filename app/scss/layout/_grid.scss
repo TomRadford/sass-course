@@ -1,14 +1,19 @@
+@use '../util' as u;
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto;
   gap: 40px;
+  // instead of:
   //max-width: 1000px;
-  width: min(100%, 1000px);
-  margin-inline: auto;
- 
+  // padding-left: 20px;
+  // padding-right: 20px;
+  // do:
+  width: min(100% - 40px, 1000px); //useful to get padding on both sides
+  margin-inline: auto; 
 
-  @media (min-width: 900px) {
+  @include u.breakpoint(large) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
   }
@@ -19,10 +24,25 @@
 
   &__main {
     background-color: hsl(240, 44%, 22%);
+
+    @include u.breakpoint(medium){
+      background-color: green;
+    }
+
+    @include u.breakpoint(large){
+      background-color: orange;
+    }
+
   }
 
   &__sidebar {
     background-color: hsl(300, 69%, 21%);
+    @include u.breakpoint-down(medium) {
+      text-align: center;
+    }
+    @include u.breakpoint-down(small) {
+      text-align: right;
+    }
   }
    
 }
