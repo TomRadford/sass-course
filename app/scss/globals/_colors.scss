@@ -1,0 +1,6 @@
+:root {
+  //root overrides all over body html
+  //vars can be set in any selector, root = global vars
+  --background-color: rgb(23, 23, 23); // this is a custom property native to CSS!
+  --text-color: white; // this is a custom property native to CSS!
+}

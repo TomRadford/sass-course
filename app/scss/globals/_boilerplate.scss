@@ -1,0 +1,20 @@
+@use '../util' as u; //or * for no namescape
+
+
+html {
+  box-sizing: border-box;
+  font-size: 100%; //16px
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0; //resets!!
+  padding: 0;
+  font-family: u.$font;
+  transition: background-color 2s;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
